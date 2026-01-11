@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import joblib
 import numpy as np
 
+# API
 app = FastAPI()
 
 model = joblib.load("diabetes_risk_model.pkl")
@@ -26,4 +27,5 @@ def predict(data: dict):
         "risk": int(pred),
         "confidence": round(float(prob), 2)
     }
+
 
